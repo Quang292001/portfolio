@@ -1,0 +1,43 @@
+/* Design tokens — Figma "Portfolio · Compact UI kit" */
+:root {
+  /* Colors */
+  --c-midnight: #080f1e;
+  --c-navy: #0f1c30;
+  --c-ice: #b6dbff;
+  --c-paper: #f5f7fa;
+  --c-ink: #172336;
+  --c-muted: #657286;
+  --c-line: #e2e7ef;
+  --c-accent: #365f88;
+  --c-tag-bg: #edf5fd;
+  --c-disabled: #9da9b8;
+  --c-stage: #e8eef5;
+  --c-dark-surface: #15253c;
+  --c-dark-line: #293a50;
+  --c-dark-muted: #adbfd3;
+
+  /* Typography */
+  --font-sans: 'Inter', system-ui, -apple-system, 'Segoe UI', sans-serif;
+  --font-mono: 'IBM Plex Mono', ui-monospace, 'SFMono-Regular', Menlo, monospace;
+
+  /* Radius */
+  --r-sm: 6px;
+  --r-md: 12px;
+  --r-lg: 20px;
+
+  /* Layout (desktop 1440) */
+  --gutter: 96px;
+  --gap: 32px;
+  --section-y: 72px;
+  --nav-h: 80px;
+}
+
+@media (max-width: 767px) {
+  :root {
+    /* Layout (mobile 390) */
+    --gutter: 24px;
+    --gap: 24px;
+    --section-y: 48px;
+    --nav-h: 72px;
+  }
+}
