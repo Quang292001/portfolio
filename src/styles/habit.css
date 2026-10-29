@@ -1,0 +1,10 @@
+/* Chỉ dành cho trang case study Habit Tracker. Các lớp còn lại dùng lại từ global.css (cs-*, challenge, ui-detail...). */
+.shot-stage { margin: 0; padding: 40px; border-radius: var(--r-md); background: #f3ece0; }
+.shot-stage img { display: block; width: 100%; height: auto; border-radius: 14px; box-shadow: 0 24px 56px rgba(60, 40, 20, .18); }
+.hcs .phones { align-items: center; }
+.shot-phone { display: block; width: auto; max-width: 100%; max-height: 560px; border-radius: 18px; box-shadow: 0 20px 44px rgba(60, 40, 20, .18); }
+
+@media (max-width: 767px) {
+  .shot-stage { padding: 14px; }
+  .hcs .phones { padding: 20px 16px; }
+}

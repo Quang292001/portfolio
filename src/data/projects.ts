@@ -56,25 +56,29 @@ export const projects: Project[] = [
 
     },
   },
-  {
-    id: 'personal-portfolio',
-    title: 'Personal Portfolio',
-    description: 'Không gian kể câu chuyện cá nhân qua thiết kế và lập trình.',
-    tags: ['Web Design', 'Next.js'],
-    href: '#',
-    stageBg: '#1c304a',
-    dark: true,
-    mockup: {
-      variant: 'overlay',
-      url: 'portfolio / concept',
-      brand: '〈/〉 Portfolio',
-      links: 'Explore     Collection     About',
-      overline: 'DESIGNER & DEVELOPER',
-      headline: ['Ý tưởng thành', 'trải nghiệm.'],
-      cta: 'Khám phá dự án ↗',
-      image: '/images/portfolio-hero.png',
-    },
-  },
+    {
+     id: 'habit-tracker',
+     title: 'Habit Tracker — Study Planner',
+     description: 'Ứng dụng theo dõi thói quen học tập (TOEIC, lập trình, thiết kế) với lịch, biểu đồ tiến độ và cách xử lý khi bỏ lỡ một ngày.',
+     tags: ['UI/UX Design', 'React', 'TypeScript'],
+     href: '/projects/habit-tracker',
+     links: [
+       { label: 'Source code', href: 'https://github.com/Quang292001/habit-tracker' },
+       { label: 'Live demo', href: 'https://habit-tracker-two-delta.vercel.app/' }, // dán link Vercel sau khi deploy
+     ],
+     stageBg: '#f1ebe0',
+     mockup: {
+       variant: 'split',
+       url: 'habit-tracker / study planner',
+       brand: 'habits.',
+       links: 'Hôm nay     Lịch     Tiến độ',
+       overline: 'STUDY HABIT TRACKER',
+       headline: ['Đều đặn,', 'không áp lực.'],
+       text: ['Theo dõi thói quen học tập.', 'Lỡ một ngày vẫn quay lại được.'],
+       cta: 'Xem case study ↗',
+       image: '/images/habit-card.png',
+     },
+   },
   {
   id: 'nexus',
   title: 'Nexus — Game Launcher',
