@@ -127,4 +127,28 @@ export const projects: Project[] = [
       image: '/images/moc-studio.jpg',
     },
   },
+  {
+    id: 'q-archives',
+    title: 'Q.Archives — Photography Booking Website',
+    description: 'Website đặt lịch chụp ảnh concept tại Sài Gòn: bộ sưu tập theo concept, bảng gói chụp, chọn ngày giờ còn trống và đặt cọc giữ lịch.',
+    tags: ['UI/UX Design', 'React', 'Booking Flow'],
+    href: 'https://website-studio-ten.vercel.app/',
+    ctaHref: 'https://website-studio-ten.vercel.app/',
+    links: [
+      { label: 'Live demo', href: 'https://website-studio-ten.vercel.app/' },
+      { label: 'Thiết kế Figma', href: 'https://www.figma.com/design/HHHdjlqYYz6j6koO1pyH7G/LUMI-STUDIO-%E2%80%93-Photography-Booking-Website?node-id=16-2&t=UoFnpOsyyVfbWwTG-1' },
+    ],
+    stageBg: '#efebe3',
+    mockup: {
+      variant: 'split',
+      url: 'website-studio-ten.vercel.app',
+      brand: 'Q.Archives',
+      links: 'Bộ sưu tập     Gói chụp     Giới thiệu     Liên hệ',
+      overline: 'PHOTOGRAPHY · SÀI GÒN',
+      headline: ['Lưu giữ những', 'khung hình đẹp nhất.'],
+      text: ['Chụp concept sinh nhật, nàng thơ, cổ trang.', 'Chọn gói, chọn giờ, đặt lịch ngay trên web.'],
+      cta: 'Xem bộ sưu tập ↗',
+      image: '/images/q-archives.jpg',
+    },
+  },
 ];
