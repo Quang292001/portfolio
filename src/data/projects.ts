@@ -103,4 +103,28 @@ export const projects: Project[] = [
     image: '/images/nexus.png',
   },
 },
+  {
+    id: 'moc-studio',
+    title: 'MỘC Studio — Photography Landing Page',
+    description: 'Landing page cho studio nhiếp ảnh tại Củ Chi: giới thiệu bộ ảnh, bảng gói chụp, quy trình và form đặt lịch.',
+    tags: ['UI/UX Design', 'Landing Page', 'Responsive'],
+    href: 'https://landing-page-beta-jet.vercel.app/',
+    ctaHref: 'https://landing-page-beta-jet.vercel.app/',
+    links: [
+      { label: 'Live demo', href: 'https://landing-page-beta-jet.vercel.app/' },
+      { label: 'Source code', href: '' }, // dán link GitHub vào đây (để trống thì sẽ ẩn)
+    ],
+    stageBg: '#ede6dc',
+    mockup: {
+      variant: 'split',
+      url: 'landing-page-beta-jet.vercel.app',
+      brand: 'MỘC STUDIO',
+      links: 'Giới thiệu     Bộ ảnh     Dịch vụ     Về Mộc',
+      overline: 'STUDIO NHIẾP ẢNH / CỦ CHI',
+      headline: ['Chụp một khoảnh khắc.', 'Lưu một đời kỷ niệm.'],
+      text: ['Không cần cầu kỳ. Chỉ cần bạn,', 'tự nhiên, trong khoảnh khắc của mình.'],
+      cta: 'Xem landing page ↗',
+      image: '/images/moc-studio.jpg',
+    },
+  },
 ];
