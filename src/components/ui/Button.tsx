@@ -9,10 +9,12 @@ interface ButtonProps {
   href?: string;
   /** Tên file khi tải về (chỉ có tác dụng với file cùng domain). */
   download?: string;
+  /** Mở trong tab mới (vd: xem file PDF). */
+  newTab?: boolean;
   onClick?: () => void;
 }
 
-export default function Button({ children, variant = 'primary', icon, href, download, onClick }: ButtonProps) {
+export default function Button({ children, variant = 'primary', icon, href, download, newTab, onClick }: ButtonProps) {
   const className = `btn btn--${variant}`;
   const content = (
     <>
@@ -30,7 +32,7 @@ export default function Button({ children, variant = 'primary', icon, href, down
       <a
         className={className}
         href={href}
-        {...(download ? { download } : external ? { target: '_blank', rel: 'noreferrer' } : {})}
+        {...(download ? { download } : external || newTab ? { target: '_blank', rel: 'noreferrer' } : {})}
       >
         {content}
       </a>

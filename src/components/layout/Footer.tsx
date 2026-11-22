@@ -34,10 +34,10 @@ export default function Footer({ heading }: { heading?: ReactNode }) {
             <p className="footer__phone">[SDT] ↗</p>
           )}
           <p className="footer__social">
-            {site.socials.map((s, i) => (
+            {site.socials.filter((s) => s.href).map((s, i) => (
               <span key={s.label}>
                 {i > 0 && '  /  '}
-                {s.href ? <a href={s.href} target="_blank" rel="noreferrer">{s.label}</a> : `[${s.label}]`}
+                <a href={s.href} target="_blank" rel="noreferrer">{s.label}</a>
               </span>
             ))}
           </p>
