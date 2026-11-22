@@ -59,7 +59,7 @@ export default function ProjectCard({ project, featured = false }: { project: Pr
         {internal ? (
           <Link className="project__title-row" to={project.href}>{title}</Link>
         ) : (
-          <a className="project__title-row" href={project.href}>{title}</a>
+          <a className="project__title-row" href={project.href} target="_blank" rel="noreferrer">{title}</a>
         )}
         <p className="project__desc">{project.description}</p>
         <TagList tags={project.tags} tone={project.dark ? 'dark' : 'light'} />

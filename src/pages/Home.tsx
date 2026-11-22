@@ -44,7 +44,7 @@ export default function Home() {
         <SectionIntro
           eyebrow="01 / SELECTED WORK"
           heading="Sản phẩm thay lời nói."
-          meta={`${String(projects.length).padStart(2, '0')} concept · UI/UX & Frontend`}
+          meta={`${String(projects.length).padStart(2, '0')} dự án · UI/UX & Frontend`}
           description="Thể hiện góc nhìn từ những ý tưởng và sản phẩm được xây dựng từ thiết kế đến giao diện."
         />
         <ProjectCard project={featured} featured />

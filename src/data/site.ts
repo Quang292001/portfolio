@@ -4,7 +4,7 @@ export const site = {
   role: 'UI/UX Designer & Frontend Developer',
   email: 'nh.quang29200189@gmail.com', // vd: 'you@example.com',
   phone: '0342455466', // vd: '+84 123 456 789',
-  cvUrl: '../../public/cv/CV_Huynh_Nhat_Quang_SOFTWARE DEVELOPER.pdf', // vd: '/cv.pdf'
+  cvUrl: '/cv/CV_Huynh_Nhat_Quang.pdf', // file nằm trong public/cv → trên web là /cv/...
   cvFileName: 'Huynh-Nhat-Quang-CV.pdf', // tên file khi người dùng tải về
   socials: [
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/quang-huynh-nhat-27b664284/?isSelfProfile=true' },

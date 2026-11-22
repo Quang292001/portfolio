@@ -112,7 +112,7 @@ export const projects: Project[] = [
     ctaHref: 'https://landing-page-beta-jet.vercel.app/',
     links: [
       { label: 'Live demo', href: 'https://landing-page-beta-jet.vercel.app/' },
-      { label: 'Source code', href: '' }, // dán link GitHub vào đây (để trống thì sẽ ẩn)
+      { label: 'Source code', href: 'https://github.com/Quang292001/landing-page' },
     ],
     stageBg: '#ede6dc',
     mockup: {

@@ -1,11 +1,11 @@
-import { CodeXml, Download, Figma, MessagesSquare } from 'lucide-react';
+import { CodeXml, Download, FileText, Figma, MessagesSquare, Server, Sparkles } from 'lucide-react';
 import Button from '../components/ui/Button';
 import SectionIntro from '../components/ui/SectionIntro';
 import { TagList } from '../components/ui/Tag';
 import { about } from '../data/about';
 import { site } from '../data/site';
 
-const icons = { figma: Figma, code: CodeXml } as const;
+const icons = { figma: Figma, code: CodeXml, server: Server, sparkles: Sparkles } as const;
 
 export default function About() {
   return (
@@ -36,18 +36,46 @@ export default function About() {
                 </div>
               ))}
             </dl>
-            <Button variant="primary" href={site.cvUrl || undefined}
-            download={site.cvUrl ? site.cvFileName : undefined} icon={<Download size={15} />}>
-              Xem CV{site.cvUrl ? '' : ' · [Thêm file của bạn]'}
-            </Button>
+            <div className="about__cv">
+              <Button variant="primary" href={site.cvUrl || undefined} newTab icon={<FileText size={15} />}>
+                Xem CV
+              </Button>
+              <Button variant="secondary" href={site.cvUrl || undefined} download={site.cvFileName} icon={<Download size={15} />}>
+                Tải CV
+              </Button>
+            </div>
           </div>
+        </div>
+      </section>
+
+      <section className="section timeline-section" aria-labelledby="timeline-title">
+        <SectionIntro eyebrow="01 / EXPERIENCE & EDUCATION" heading="Kinh nghiệm & học vấn." />
+        <ol className="timeline">
+          {about.timeline.map((t) => (
+            <li className="timeline__item" key={t.title}>
+              <p className="timeline__time">{t.time}</p>
+              <div className="timeline__body">
+                <h3 className="timeline__title">{t.title}</h3>
+                <p className="timeline__place">{t.place}</p>
+                <ul className="timeline__points">
+                  {t.points.map((pt) => (
+                    <li key={pt}>{pt}</li>
+                  ))}
+                </ul>
+              </div>
+            </li>
+          ))}
+        </ol>
+        <div className="creative">
+          <p className="eyebrow">NGOÀI UI/UX</p>
+          <TagList tags={about.creative} />
         </div>
       </section>
 
       <section className="section section--paper capabilities">
         <SectionIntro
-          eyebrow="01 / CAPABILITIES"
-          heading="Hai góc nhìn. Một trải nghiệm."
+          eyebrow="02 / CAPABILITIES"
+          heading="Thiết kế, code và những gì ở giữa."
           description="Các kỹ năng và công cụ theo từng lĩnh vực"
         />
         <div className="capabilities__grid">
@@ -71,7 +99,7 @@ export default function About() {
       </section>
 
       <section className="section process">
-        <SectionIntro eyebrow="02 / HOW I WORK" heading="Từ câu hỏi đúng đến sản phẩm tốt." />
+        <SectionIntro eyebrow="03 / HOW I WORK" heading="Từ câu hỏi đúng đến sản phẩm tốt." />
         <ol className="process__stages">
           {about.process.map((s) => (
             <li className="stage-step" key={s.n}>
