@@ -19,8 +19,8 @@ export default function About() {
 
         <div className="about__bio">
           <figure className="about__figure">
-            <img className="about__photo" src="/images/dream.jpeg" alt="" />
-            <figcaption className="project__note">Minh họa không gian sáng tạo · code.</figcaption>
+            <img className="about__photo" src="/images/quang.jpg" alt="Huỳnh Nhật Quang" />
+            <figcaption className="project__note">Huỳnh Nhật Quang · UI/UX Designer & Frontend Developer</figcaption>
           </figure>
 
           <div className="about__text">
