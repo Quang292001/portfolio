@@ -147,3 +147,38 @@
 }
 .ff-hero-shot picture { display: block; }
 @media (max-width: 767px) { .ff-hero-shot { align-self: center; max-width: 320px; } }
+
+/* ---------- Film Snake: cùng bố cục, bảng màu "Phòng tối" ---------- */
+.ffcs--film {
+  --ff-bg: #140a0a;
+  --ff-deep: #0e0606;
+  --ff-surface: #1f1111;
+  --ff-wall: #3a1c1c;
+  --ff-firefly: #e8a33a;
+  --ff-accent: #e8a33a;
+  --ff-text: #f6e9df;
+  --ff-muted: #b99c90;
+  --ff-glow: 0 0 22px rgba(215, 38, 46, .55);
+}
+.ffcs--film .ff-intro { background: radial-gradient(60% 50% at 80% 8%, rgba(215, 38, 46, .22), transparent 70%), var(--ff-bg); }
+.ffcs--film .ff-title__glow { color: var(--ff-text); text-shadow: var(--ff-glow); }
+.ffcs--film .ff-trail i { background: #d7262e; box-shadow: 0 0 10px #d7262e; }
+.ffcs--film .ff-btn--glow { background: #d7262e; color: #fff; box-shadow: 0 0 18px rgba(215, 38, 46, .45); }
+.ffcs--film .ff-section { border-top-color: rgba(58, 28, 28, .7); }
+.ffcs--film .ff-hero-shot { box-shadow: 0 0 0 6px rgba(58, 28, 28, .35), 0 40px 90px rgba(0, 0, 0, .6), 0 0 80px rgba(215, 38, 46, .15); }
+.ffcs--film .ff-toggle button[aria-pressed='true'] { color: #1a0a06; }
+.fs-display, .fs-hud { font-family: 'Bungee', var(--font-sans); }
+.fs-display { color: var(--ff-text); text-shadow: var(--ff-glow); font-size: 40px; }
+.fs-hud { color: var(--ff-accent); }
+.fs-body { font-family: 'Rubik', var(--font-sans); font-weight: 500; }
+.fs-items { display: flex; flex-direction: column; margin: 0; }
+.fs-items div { display: flex; justify-content: space-between; gap: 16px; padding-block: 12px; border-bottom: 1px solid var(--ff-wall); }
+.fs-items dt { font-weight: 600; }
+.fs-items dd { margin: 0; font-size: 13px; text-align: right; color: var(--ff-muted); }
+.fs-screens.ff-screens--desktop { grid-template-columns: repeat(2, 1fr); }
+.fs-screens.ff-screens--mobile { grid-template-columns: repeat(4, 1fr); }
+@media (max-width: 767px) {
+  .fs-screens.ff-screens--desktop { grid-template-columns: 1fr; }
+  .fs-screens.ff-screens--mobile { grid-template-columns: repeat(2, 1fr); }
+  .fs-display { font-size: 30px; }
+}

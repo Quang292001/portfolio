@@ -464,7 +464,7 @@ a.mockup__cta { position: relative; z-index: 2; }
 @keyframes vf-rise { from { opacity: 0; transform: translateY(8px); } }
 .vf__frame:hover .vf__caption strong { text-decoration: underline; text-underline-offset: 4px; text-decoration-thickness: 1px; }
 
-.vf__strip { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+.vf__strip { display: grid; grid-auto-flow: column; grid-auto-columns: 1fr; gap: 10px; }
 .vf__thumb { position: relative; padding: 0; overflow: hidden; aspect-ratio: 16 / 10; border: 1px solid var(--c-dark-line); border-radius: 4px; background: #000; opacity: .5; transition: opacity .2s, border-color .2s; }
 .vf__thumb img { width: 100%; height: 100%; object-fit: cover; }
 .vf__thumb span { position: absolute; left: 6px; bottom: 4px; font-family: var(--font-mono); font-size: 11px; color: #fff; text-shadow: 0 1px 4px rgba(0, 0, 0, .8); }

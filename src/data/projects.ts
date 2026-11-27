@@ -140,6 +140,31 @@ export const projects: Project[] = [
       image: '/images/q-archives.jpg',
     },
   },
+  {
+    id: 'film-snake',
+    title: 'Film Snake — Browser Game',
+    description:
+      'Game rắn săn mồi chủ đề nhiếp ảnh: dải phim đầu máy ảnh nhặt cuộn phim, săn ảnh hiếm để mở khóa album. Ý tưởng, hình vẽ, âm thanh và code Canvas đều tự làm.',
+    tags: ['Game Design', 'Graphic & UI', 'JavaScript · Canvas'],
+    href: '/projects/film-snake',
+    links: [
+      { label: 'Chơi ngay', href: 'https://film-snake.vercel.app/' },
+      { label: 'Source code', href: 'https://github.com/Quang292001/film-snake' },
+    ],
+    stageBg: '#140a0a',
+    dark: true,
+    hero: { image: '/images/hero/film-snake.jpg', kind: 'Game · Canvas', exposure: 'Phim 400 · 36 kiểu' },
+    mockup: {
+      variant: 'overlay',
+      url: 'film-snake.vercel.app',
+      brand: 'FILM SNAKE',
+      links: '',
+      overline: '',
+      headline: ['', ''],
+      cta: '',
+      image: '/images/film-snake/desktop-1-guide.jpg',
+    },
+  },
 ];
 
 /** Bài tập và thử nghiệm: nhỏ hơn, không có case study, hiển thị gọn dưới lưới dự án. */
