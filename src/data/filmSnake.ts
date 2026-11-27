@@ -1,5 +1,8 @@
 // Nội dung case study Film Snake. Số liệu (14px vuốt, 150→70ms, ảnh hiếm 6 giây...) lấy từ index.html trong repo.
 export const filmSnake = {
+  id: 'film-snake',
+  heroKey: '1-guide',
+  heroAlt: 'Màn mở đầu Film Snake: logo chữ khối, hình minh họa dải phim đầu máy ảnh uốn lượn giữa cuộn phim, tia flash và ống kính, nút Chơi ngay màu đỏ',
   eyebrow: 'CASE STUDY / GAME DESIGN · GRAPHIC · FRONTEND',
   title: ['Film Snake —', 'mỗi cuộn phim, một khung hình.'],
   summary:
@@ -44,6 +47,7 @@ export const filmSnake = {
       { name: 'Ống kính vàng', effect: 'Nhân đôi điểm trong 8 giây' },
       { name: 'Ảnh hiếm', effect: '+50 điểm, mở khóa 1 ảnh, biến mất sau 6 giây' },
     ],
+    typeSample: { display: 'FILM SNAKE', hud: 'HẾT PHIM! · 340', body: 'Ảnh hiếm xuất hiện ngẫu nhiên trong lúc chơi' },
     typeNote: 'Bungee cho logo, tiêu đề và con số: khối chữ dày như chữ in trên vỏ hộp phim. Rubik cho phần chữ đọc, vì gọn và đủ dấu tiếng Việt.',
   },
   screens: {

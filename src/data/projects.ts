@@ -165,6 +165,31 @@ export const projects: Project[] = [
       image: '/images/film-snake/desktop-1-guide.jpg',
     },
   },
+  {
+    id: 'crossing-saigon',
+    title: 'Crossing Saigon — Browser Game',
+    description:
+      'Game băng qua đường phố Sài Gòn: nhiếp ảnh gia né xe máy, taxi, xe buýt để tới dãy nhà phố chụp ảnh. Lần đầu dùng Phaser 3, hình vẽ và âm thanh tự làm.',
+    tags: ['Game Design', 'Graphic & UI', 'Phaser 3'],
+    href: '/projects/crossing-saigon',
+    links: [
+      { label: 'Chơi ngay', href: 'https://crossing-saigon.vercel.app/' },
+      { label: 'Source code', href: 'https://github.com/Quang292001/crossing-saigon' },
+    ],
+    stageBg: '#1b1410',
+    dark: true,
+    hero: { image: '/images/hero/crossing-saigon.jpg', kind: 'Game · Phaser 3', exposure: 'ISO 800 · 1/500s' },
+    mockup: {
+      variant: 'overlay',
+      url: 'crossing-saigon.vercel.app',
+      brand: 'CROSSING SAIGON',
+      links: '',
+      overline: '',
+      headline: ['', ''],
+      cta: '',
+      image: '/images/crossing-saigon/desktop-1-splash.jpg',
+    },
+  },
 ];
 
 /** Bài tập và thử nghiệm: nhỏ hơn, không có case study, hiển thị gọn dưới lưới dự án. */

@@ -8,7 +8,9 @@ import ScrollToTop from './components/layout/ScrollToTop';
 import HabitCaseStudy from './pages/HabitCaseStudy';
 import FireflyCaseStudy from './pages/FireflyCaseStudy';
 import QArchivesCaseStudy from './pages/QArchivesCaseStudy';
-import FilmSnakeCaseStudy from './pages/FilmSnakeCaseStudy';
+import GameCaseStudy from './pages/GameCaseStudy';
+import { filmSnake } from './data/filmSnake';
+import { crossingSaigon } from './data/crossingSaigon';
 export default function App() {
   const { pathname } = useLocation();
   return (
@@ -23,7 +25,8 @@ export default function App() {
           <Route path="/projects/habit-tracker" element={<HabitCaseStudy />} />
           <Route path="/projects/firefly-maze" element={<FireflyCaseStudy />} />
           <Route path="/projects/q-archives" element={<QArchivesCaseStudy />} />
-          <Route path="/projects/film-snake" element={<FilmSnakeCaseStudy />} />
+          <Route path="/projects/film-snake" element={<GameCaseStudy d={filmSnake} theme="ffcs--film" />} />
+          <Route path="/projects/crossing-saigon" element={<GameCaseStudy d={crossingSaigon} theme="ffcs--saigon" />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>

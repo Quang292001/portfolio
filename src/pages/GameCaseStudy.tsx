@@ -3,18 +3,20 @@ import { ArrowUpRight, Github, Info, Monitor, Smartphone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import SectionIntro from '../components/ui/SectionIntro';
 import { TagList } from '../components/ui/Tag';
-import { filmSnake as d } from '../data/filmSnake';
+import type { filmSnake } from '../data/filmSnake';
 
-const IMG = '/images/film-snake';
+export type GameStudy = typeof filmSnake;
 
-// Dùng lại bố cục và lớp CSS của trang Firefly (.ffcs, .ff-*); .ffcs--film chỉ đổi bảng màu sang "Phòng tối".
-export default function FilmSnakeCaseStudy() {
+// Case study cho các game nhỏ (Film Snake, Crossing Saigon): dùng lại bố cục và lớp CSS của trang Firefly (.ffcs, .ff-*).
+// theme là lớp đổi bảng màu, vd. ffcs--film; ảnh nằm ở /images/<id>/<device>-<key>.jpg.
+export default function GameCaseStudy({ d, theme }: { d: GameStudy; theme: string }) {
   const { idea, visual, screens, decisions, implementation } = d;
+  const IMG = `/images/${d.id}`;
   const [device, setDevice] = useState<'desktop' | 'mobile'>('desktop');
 
   return (
-    <div className="ffcs ffcs--film">
-      <section className="ff-intro" aria-labelledby="fs-title">
+    <div className={`ffcs ${theme}`}>
+      <section className="ff-intro" aria-labelledby="game-title">
         <span className="ff-trail" aria-hidden="true">
           {Array.from({ length: 9 }, (_, i) => (
             <i key={i} style={{ animationDelay: `${i * 0.18}s` }} />
@@ -22,7 +24,7 @@ export default function FilmSnakeCaseStudy() {
         </span>
         <Link className="cs-back" to="/#projects">← Tất cả dự án</Link>
         <p className="eyebrow">{d.eyebrow}</p>
-        <h1 id="fs-title" className="ff-title">
+        <h1 id="game-title" className="ff-title">
           <span className="block">{d.title[0]}</span>
           <span className="block ff-title__glow">{d.title[1]}</span>
         </h1>
@@ -39,13 +41,8 @@ export default function FilmSnakeCaseStudy() {
         </div>
         <figure className="ff-hero-shot">
           <picture>
-            <source media="(max-width: 767px)" srcSet={`${IMG}/mobile-1-guide.jpg`} width={390} height={844} />
-            <img
-              src={`${IMG}/desktop-1-guide.jpg`}
-              width={1440}
-              height={900}
-              alt="Màn mở đầu Film Snake: logo chữ khối, hình minh họa dải phim đầu máy ảnh uốn lượn giữa cuộn phim, tia flash và ống kính, nút Chơi ngay màu đỏ"
-            />
+            <source media="(max-width: 767px)" srcSet={`${IMG}/mobile-${d.heroKey}.jpg`} width={390} height={844} />
+            <img src={`${IMG}/desktop-${d.heroKey}.jpg`} width={1440} height={900} alt={d.heroAlt} />
           </picture>
         </figure>
         <dl className="meta-grid ff-meta">
@@ -113,9 +110,9 @@ export default function FilmSnakeCaseStudy() {
           </div>
           <div className="ff-card">
             <p className="eyebrow">KIỂU CHỮ</p>
-            <p className="ff-type-display fs-display">FILM SNAKE</p>
-            <p className="ff-type-hud fs-hud">HẾT PHIM! · 340</p>
-            <p className="ff-type-body fs-body">Ảnh hiếm xuất hiện ngẫu nhiên trong lúc chơi</p>
+            <p className="ff-type-display fs-display">{visual.typeSample.display}</p>
+            <p className="ff-type-hud fs-hud">{visual.typeSample.hud}</p>
+            <p className="ff-type-body fs-body">{visual.typeSample.body}</p>
             <p className="ff-card__note">{visual.typeNote}</p>
           </div>
         </div>
@@ -133,7 +130,7 @@ export default function FilmSnakeCaseStudy() {
             </button>
           </div>
         </div>
-        <ol className={`ff-screens ff-screens--${device} fs-screens`}>
+        <ol className={`ff-screens ff-screens--${device} fs-screens`} data-n={screens.items.length}>
           {screens.items.map((s, i) => (
             <li key={s.key}>
               <img
