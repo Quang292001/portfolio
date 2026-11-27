@@ -5,10 +5,12 @@ export type Project = {
   tags: string[];
   href: string;
   stageBg: string;
-  dark?: boolean; // ← thêm dòng này: true nếu nền thẻ tối
-   ctaHref?: string; // link riêng cho nút trong mockup;
-   note?: string;
-links?: { label: string; href: string }[];
+  dark?: boolean; // true nếu nền thẻ tối
+  ctaHref?: string; // link riêng cho nút trong mockup
+  note?: string;
+  links?: { label: string; href: string }[];
+  /** Khung hình trong hero (kính ngắm). Thông số phơi sáng là một trò đùa của người chụp ảnh. */
+  hero?: { image: string; kind: string; exposure: string };
   mockup:
     | {
         variant: 'split';
@@ -33,56 +35,13 @@ links?: { label: string; href: string }[];
       };
 };
 
+/** Dự án chính, theo thứ tự hiển thị. Dự án đầu tiên là thẻ lớn. */
 export const projects: Project[] = [
-  {
-    id: 'stride',
-    title: 'SHOES — E-commerce Website',
-    
-    description: 'Trải nghiệm tìm và chọn giày, từ khám phá bộ sưu tập đến giỏ hàng rõ ràng.',
-    tags: ['UI/UX Design', 'React', 'Tailwind CSS'],
-     href: '/projects/stride',          // tiêu đề vẫn dẫn tới trang case study
-  ctaHref: 'https://shoes-ecommerce-6xyg.vercel.app/', // nút "Khám phá bộ sưu tập" dẫn tới web thật
-    stageBg: '#e8eef5',
-    mockup: {
-      variant: 'split',
-      url: 'https://shoes-ecommerce-6xyg.vercel.app/',
-      brand: 'SHOES.',
-      links: 'Bộ sưu tập     Nam     Nữ       Tìm kiếm  ⌕',
-      overline: 'THE EVERYDAY COLLECTION',
-      headline: ['Mỗi bước chân.', 'Một dấu ấn.'],
-      text: ['Thiết kế nhẹ nhàng. Chuyển động tự do.', 'Tìm đôi giày dành riêng cho bạn.'],
-      cta: 'Khám phá bộ sưu tập ↗',
-      image: '/images/shoes.png',
-
-    },
-  },
-    {
-     id: 'habit-tracker',
-     title: 'Habit Tracker — Study Planner',
-     description: 'Ứng dụng theo dõi thói quen học tập (TOEIC, lập trình, thiết kế) với lịch, biểu đồ tiến độ và cách xử lý khi bỏ lỡ một ngày.',
-     tags: ['UI/UX Design', 'React', 'TypeScript'],
-     href: '/projects/habit-tracker',
-     links: [
-       { label: 'Source code', href: 'https://github.com/Quang292001/habit-tracker' },
-       { label: 'Live demo', href: 'https://habit-tracker-two-delta.vercel.app/' }, // dán link Vercel sau khi deploy
-     ],
-     stageBg: '#f1ebe0',
-     mockup: {
-       variant: 'split',
-       url: 'habit-tracker / study planner',
-       brand: 'habits.',
-       links: 'Hôm nay     Lịch     Tiến độ',
-       overline: 'STUDY HABIT TRACKER',
-       headline: ['Đều đặn,', 'không áp lực.'],
-       text: ['Theo dõi thói quen học tập.', 'Lỡ một ngày vẫn quay lại được.'],
-       cta: 'Xem case study ↗',
-       image: '/images/habit-card.png',
-     },
-   },
   {
     id: 'firefly-maze',
     title: 'Firefly Maze — Browser Game',
-    description: 'Game mê cung trên trình duyệt: đom đóm nhặt đốm sáng giữa rừng đêm, né bóng ma. Tự làm từ ý tưởng, nhân vật, bảng màu đến code Canvas.',
+    description:
+      'Game mê cung trên trình duyệt: đom đóm nhặt đốm sáng giữa rừng đêm, né bóng ma. Tự làm từ ý tưởng, nhân vật, bảng màu đến code Canvas.',
     tags: ['Game Design', 'Graphic & UI', 'JavaScript · Canvas'],
     href: '/projects/firefly-maze',
     links: [
@@ -92,6 +51,7 @@ export const projects: Project[] = [
     ],
     stageBg: '#06141b',
     dark: true,
+    hero: { image: '/images/hero/firefly.jpg', kind: 'Game · Canvas', exposure: 'ISO 3200 · 1/30s' },
     mockup: {
       variant: 'overlay',
       url: 'firefly-maze.vercel.app',
@@ -104,65 +64,70 @@ export const projects: Project[] = [
     },
   },
   {
-  id: 'nexus',
-  title: 'Nexus — Game Launcher',
-  description: 'Launcher game fantasy RPG mô phỏng: duyệt thư viện, khám phá theo thể loại, tìm kiếm và lưu game yêu thích.',
-  tags: ['UI/UX Design', 'React', 'Vite'],
-  href: 'https://nexus-game-launcher-six.vercel.app/',
-  ctaHref: 'https://nexus-game-launcher-six.vercel.app/',
-  links: [
-    { label: 'Source code', href: 'https://github.com/Quang292001/nexus-game-launcher' },
-    { label: 'Thiết kế Figma', href: 'https://www.figma.com/design/svCHWcuikjBuidp7PztkvZ/Untitled?node-id=147-2&t=T7zIQ66bTARJhdha-1' }, // dán link Figma của bạn vào đây
-  ],
-  stageBg: '#152137',
-  dark: true,
-  mockup: {
-    variant: 'overlay',
-    url: 'nexus-game-launcher-six.vercel.app',
-    brand: 'NEXUS',
-    links: 'Home     Library     Discover     Favorites',
-    overline: '',
-    headline: ['', ''],
-    cta: '',
-    image: '/images/nexus.png',
-  },
-},
-  {
-    id: 'moc-studio',
-    title: 'MỘC Studio — Photography Landing Page',
-    description: 'Landing page cho studio nhiếp ảnh tại Củ Chi: giới thiệu bộ ảnh, bảng gói chụp, quy trình và form đặt lịch.',
-    tags: ['UI/UX Design', 'Landing Page', 'Responsive'],
-    href: 'https://landing-page-beta-jet.vercel.app/',
-    ctaHref: 'https://landing-page-beta-jet.vercel.app/',
+    id: 'stride',
+    title: 'SHOES — E-commerce Website',
+    description:
+      'Cửa hàng giày làm trọn vòng: chọn size, giỏ hàng, đặt hàng, theo dõi đơn và trang quản trị sản phẩm. Frontend React nối API .NET.',
+    tags: ['UI/UX Design', 'React', '.NET API'],
+    href: '/projects/stride',
+    ctaHref: 'https://shoes-ecommerce-6xyg.vercel.app/',
     links: [
-      { label: 'Live demo', href: 'https://landing-page-beta-jet.vercel.app/' },
-      { label: 'Source code', href: 'https://github.com/Quang292001/landing-page' },
+      { label: 'Live demo', href: 'https://shoes-ecommerce-6xyg.vercel.app/' },
+      { label: 'Source code', href: 'https://github.com/Quang292001/shoes-ecommerce' },
     ],
-    stageBg: '#ede6dc',
+    stageBg: '#e8eef5',
+    hero: { image: '/images/hero/shoes.jpg', kind: 'E-commerce · Full-stack', exposure: 'ISO 200 · 1/1000s' },
     mockup: {
       variant: 'split',
-      url: 'landing-page-beta-jet.vercel.app',
-      brand: 'MỘC STUDIO',
-      links: 'Giới thiệu     Bộ ảnh     Dịch vụ     Về Mộc',
-      overline: 'STUDIO NHIẾP ẢNH / CỦ CHI',
-      headline: ['Chụp một khoảnh khắc.', 'Lưu một đời kỷ niệm.'],
-      text: ['Không cần cầu kỳ. Chỉ cần bạn,', 'tự nhiên, trong khoảnh khắc của mình.'],
-      cta: 'Xem landing page ↗',
-      image: '/images/moc-studio.jpg',
+      url: 'https://shoes-ecommerce-6xyg.vercel.app/',
+      brand: 'SHOES.',
+      links: 'Bộ sưu tập     Nam     Nữ       Tìm kiếm  ⌕',
+      overline: 'THE EVERYDAY COLLECTION',
+      headline: ['Mỗi bước chân.', 'Một dấu ấn.'],
+      text: ['Thiết kế nhẹ nhàng. Chuyển động tự do.', 'Tìm đôi giày dành riêng cho bạn.'],
+      cta: 'Khám phá bộ sưu tập ↗',
+      image: '/images/shoes.png',
+    },
+  },
+  {
+    id: 'habit-tracker',
+    title: 'Habit Tracker — Study Planner',
+    description:
+      'Ứng dụng theo dõi thói quen học tập (TOEIC, lập trình, thiết kế) với lịch, biểu đồ tiến độ và cách xử lý khi bỏ lỡ một ngày.',
+    tags: ['UI/UX Design', 'React', 'TypeScript'],
+    href: '/projects/habit-tracker',
+    links: [
+      { label: 'Live demo', href: 'https://habit-tracker-two-delta.vercel.app/' },
+      { label: 'Source code', href: 'https://github.com/Quang292001/habit-tracker' },
+    ],
+    stageBg: '#f1ebe0',
+    hero: { image: '/images/hero/habit.jpg', kind: 'Product · TypeScript', exposure: 'ISO 400 · 1/125s' },
+    mockup: {
+      variant: 'split',
+      url: 'habit-tracker / study planner',
+      brand: 'habits.',
+      links: 'Hôm nay     Lịch     Tiến độ',
+      overline: 'STUDY HABIT TRACKER',
+      headline: ['Đều đặn,', 'không áp lực.'],
+      text: ['Theo dõi thói quen học tập.', 'Lỡ một ngày vẫn quay lại được.'],
+      cta: 'Xem case study ↗',
+      image: '/images/habit-card.png',
     },
   },
   {
     id: 'q-archives',
     title: 'Q.Archives — Photography Booking Website',
-    description: 'Website đặt lịch chụp ảnh concept tại Sài Gòn: bộ sưu tập theo concept, bảng gói chụp, chọn ngày giờ còn trống và đặt cọc giữ lịch.',
+    description:
+      'Website đặt lịch chụp ảnh concept: bộ sưu tập theo concept, ba gói chụp, chọn ngày giờ còn trống và giữ lịch bằng tiền cọc, tất cả trong một trang.',
     tags: ['UI/UX Design', 'React', 'Booking Flow'],
-    href: 'https://website-studio-ten.vercel.app/',
+    href: '/projects/q-archives',
     ctaHref: 'https://website-studio-ten.vercel.app/',
     links: [
       { label: 'Live demo', href: 'https://website-studio-ten.vercel.app/' },
       { label: 'Thiết kế Figma', href: 'https://www.figma.com/design/HHHdjlqYYz6j6koO1pyH7G/LUMI-STUDIO-%E2%80%93-Photography-Booking-Website?node-id=16-2&t=UoFnpOsyyVfbWwTG-1' },
     ],
     stageBg: '#efebe3',
+    hero: { image: '/images/hero/q-archives.jpg', kind: 'Booking · UX flow', exposure: 'ISO 100 · f/1.8' },
     mockup: {
       variant: 'split',
       url: 'website-studio-ten.vercel.app',
@@ -174,5 +139,36 @@ export const projects: Project[] = [
       cta: 'Xem bộ sưu tập ↗',
       image: '/images/q-archives.jpg',
     },
+  },
+];
+
+/** Bài tập và thử nghiệm: nhỏ hơn, không có case study, hiển thị gọn dưới lưới dự án. */
+export const experiments: {
+  title: string;
+  year: string;
+  description: string;
+  tags: string[];
+  links: { label: string; href: string }[];
+}[] = [
+  {
+    title: 'Nexus — Game Launcher',
+    year: '2026',
+    description: 'Luyện bố cục ứng dụng nhiều khu vực: thư viện, khám phá theo thể loại, tìm kiếm và danh sách yêu thích lưu trên trình duyệt.',
+    tags: ['React', 'Vite', 'localStorage'],
+    links: [
+      { label: 'Xem web', href: 'https://nexus-game-launcher-six.vercel.app/' },
+      { label: 'Source', href: 'https://github.com/Quang292001/nexus-game-launcher' },
+      { label: 'Figma', href: 'https://www.figma.com/design/svCHWcuikjBuidp7PztkvZ/Untitled?node-id=147-2&t=T7zIQ66bTARJhdha-1' },
+    ],
+  },
+  {
+    title: 'MỘC Studio — Landing Page',
+    year: '2026',
+    description: 'Landing page một trang cho studio ảnh ở Củ Chi: bộ ảnh, bảng gói, quy trình và form đặt lịch. Ý tưởng studio ảnh đầu tiên, sau đó phát triển thành Q.Archives.',
+    tags: ['HTML · CSS · JS', 'Responsive'],
+    links: [
+      { label: 'Xem web', href: 'https://landing-page-beta-jet.vercel.app/' },
+      { label: 'Source', href: 'https://github.com/Quang292001/landing-page' },
+    ],
   },
 ];

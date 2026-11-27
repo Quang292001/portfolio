@@ -126,7 +126,7 @@ export default function FireflyCaseStudy() {
             <p className="ff-card__note">{visual.ghostNote}</p>
           </div>
           <div className="ff-card">
-            <p className="eyebrow">TYPOGRAPHY</p>
+            <p className="eyebrow">KIỂU CHỮ</p>
             <p className="ff-type-display">FIREFLY MAZE</p>
             <p className="ff-type-hud">SCORE 1250 · LEVEL 3</p>
             <p className="ff-type-body">Nhặt hết đốm sáng để qua màn</p>

@@ -1,4 +1,3 @@
-// TODO: thay các placeholder bằng thông tin thật (Figma dùng [Email], [LinkedIn]...).
 export const site = {
   name: 'Huỳnh Nhật Quang',
   role: 'UI/UX Designer & Frontend Developer',
@@ -9,7 +8,6 @@ export const site = {
   socials: [
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/quang-huynh-nhat-27b664284/?isSelfProfile=true' },
     { label: 'GitHub', href: 'https://github.com/Quang292001' },
-    { label: 'Behance', href: '' },
   ],
   nav: [
     { label: 'Trang chủ', to: '/' },

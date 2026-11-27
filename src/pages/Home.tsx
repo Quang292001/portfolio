@@ -4,7 +4,7 @@ import Button from '../components/ui/Button';
 import HeroVisual from '../components/ui/HeroVisual';
 import ProjectCard from '../components/ui/ProjectCard';
 import SectionIntro from '../components/ui/SectionIntro';
-import { projects } from '../data/projects';
+import { experiments, projects } from '../data/projects';
 import { site } from '../data/site';
 
 const [featured, ...others] = projects;
@@ -15,16 +15,16 @@ export default function Home() {
       <section className="hero" aria-labelledby="hero-title">
         <div className="hero__main">
         <div className="hero__copy">
-          <p className="eyebrow eyebrow--ice">PORTFOLIO / DESIGN × DEVELOPMENT</p>
+          <p className="eyebrow eyebrow--ice">PORTFOLIO 2026 · TP. HỒ CHÍ MINH</p>
           <p className="hero__greeting">Xin chào, mình là {site.name}</p>
           <h1 id="hero-title" className="hero__title">
-            <span className="block">Thiết kế có chiều sâu.</span>
-            <span className="block">Code đến từng chi tiết.</span>
+            <span className="block">Nhìn như nhiếp ảnh gia.</span>
+            <span className="block hero__title-accent">Dựng như lập trình viên.</span>
           </h1>
           <p className="hero__role">{site.role}</p>
           <p className="body body--dark">
-            Kết nối tư duy trải nghiệm với khả năng hiện thực hóa giao diện. Từ một vấn đề cần giải quyết đến một sản phẩm
-            dễ dùng, chỉn chu và có thể triển khai.
+            Một năm cầm máy ảnh dạy mình đọc ánh sáng, bố cục và màu sắc. Mình mang cách nhìn đó vào giao diện, rồi tự
+            tay code nó, từ một trang đặt lịch đến một game chạy trên trình duyệt.
           </p>
           <div className="hero__actions">
             <Button variant="ice" href="#projects" icon={<ArrowUpRight size={15} />}>Xem dự án</Button>
@@ -35,23 +35,46 @@ export default function Home() {
         <HeroVisual />
         </div>
         <div className="hero__foot">
-          <span>HUMAN-CENTERED. DETAIL-DRIVEN.</span>
+          <span>{String(projects.length).padStart(2, '0')} KHUNG HÌNH ĐƯỢC CHỌN · CUỘN XUỐNG ĐỂ XEM</span>
           <ArrowDown size={17} aria-hidden="true" />
         </div>
       </section>
 
       <section className="section work" id="projects">
         <SectionIntro
-          eyebrow="01 / SELECTED WORK"
+          eyebrow="01 / KHUNG HÌNH CHỌN LỌC"
           heading="Sản phẩm thay lời nói."
           meta={`${String(projects.length).padStart(2, '0')} dự án · UI/UX & Frontend`}
-          description="Thể hiện góc nhìn từ những ý tưởng và sản phẩm được xây dựng từ thiết kế đến giao diện."
+          description="Mỗi dự án đều do mình thiết kế và tự code, có case study kể lại vì sao nó trông như vậy."
         />
-        <ProjectCard project={featured} featured />
+        <ProjectCard project={featured} index={1} featured />
         <div className="work__grid">
-          {others.map((p) => (
-            <ProjectCard key={p.id} project={p} />
+          {others.map((p, i) => (
+            <ProjectCard key={p.id} project={p} index={i + 2} />
           ))}
+        </div>
+        <div className="experiments">
+          <div className="experiments__head">
+            <p className="eyebrow">BÀI TẬP & THỬ NGHIỆM</p>
+            <p className="experiments__note">Nhỏ hơn, không có case study, nhưng là nơi mình thử những thứ mới.</p>
+          </div>
+          <ul className="experiments__list">
+            {experiments.map((e) => (
+              <li className="experiment" key={e.title}>
+                <span className="experiment__year">{e.year}</span>
+                <div className="experiment__body">
+                  <h3>{e.title}</h3>
+                  <p>{e.description}</p>
+                </div>
+                <p className="experiment__tags">{e.tags.join(' · ')}</p>
+                <p className="experiment__links">
+                  {e.links.map((l) => (
+                    <a key={l.label} href={l.href} target="_blank" rel="noreferrer">{l.label} ↗</a>
+                  ))}
+                </p>
+              </li>
+            ))}
+          </ul>
         </div>
         {/* <p className="note">
           Các giao diện trên là concept minh họa cho cách trình bày. Thay bằng ảnh sản phẩm, vai trò và đường dẫn thực tế
@@ -62,14 +85,14 @@ export default function Home() {
       <section className="section section--paper">
         <div className="approach">
           <div className="approach__main">
-            <p className="eyebrow">02 / A LITTLE ABOUT ME</p>
+            <p className="eyebrow">02 / VÀI ĐIỀU VỀ MÌNH</p>
             <h2 className="heading">
-              <span className="block">Tư duy thiết kế.</span>
-              <span className="block">Tinh thần xây dựng.</span>
+              <span className="block">Đẹp phải có lý do.</span>
+              <span className="block">Code phải đọc được.</span>
             </h2>
             <p className="body">
-              Mình hướng đến giao diện vừa rõ ràng với người dùng, vừa thực tế khi phát triển. Mỗi màn hình là sự kết hợp
-              giữa cấu trúc, cảm xúc và chi tiết.
+              Mình yêu nghệ thuật nhưng cần mọi thứ hợp lý. Mỗi màu, mỗi khoảng trống đều phải trả lời được câu hỏi "để làm
+              gì", và mỗi dòng code đều phải để người sau đọc hiểu.
             </p>
             <Link className="btn btn--secondary" to="/about">
               Về tôi & kỹ năng

@@ -12,7 +12,10 @@ export default function Navigation() {
     <header className="nav">
       <div className="nav__bar">
         <NavLink to="/" className="nav__identity" onClick={() => setOpen(false)}>
-          <span className="nav__mono" aria-hidden="true">〈/〉</span>
+          <svg className="nav__mark" viewBox="0 0 28 28" width="28" height="28" aria-hidden="true">
+            <path d="M2 9V2h7M19 2h7v7M26 19v7h-7M9 26H2v-7" fill="none" stroke="currentColor" strokeWidth="2" />
+            <circle cx="14" cy="14" r="3.5" fill="#e8ff59" />
+          </svg>
           <span className="nav__name">{site.name}</span>
         </NavLink>
 

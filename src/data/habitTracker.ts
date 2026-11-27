@@ -1,7 +1,6 @@
 // Nội dung case study Habit Tracker.
-// TODO: điền link demo thật sau khi deploy; kiểm tra lại link GitHub cho đúng repo của bạn.
 export const habitTracker = {
-  eyebrow: 'CASE STUDY / PRODUCT DESIGN + FRONTEND',
+  eyebrow: 'CASE STUDY / THIẾT KẾ SẢN PHẨM · FRONTEND',
   title: ['Habit Tracker —', 'đều đặn, không áp lực.'],
   summary:
     'Ứng dụng theo dõi thói quen học tập (TOEIC, lập trình, thiết kế). Mình tự thiết kế trải nghiệm và xây dựng giao diện, tập trung vào một câu hỏi: làm sao để người dùng quay lại sau khi lỡ một ngày.',

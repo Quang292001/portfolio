@@ -1,7 +1,6 @@
-// TODO: thay các placeholder [..] bằng thông tin thật của bạn.
 export const about = {
   subtitle: 'UI/UX Designer & Frontend Developer · Tp. Hồ Chí Minh · nh.quang29200189@gmail.com · 0342455466',
-  statement: 'Mình quan tâm đến sự đơn giản và trải nghiệm người dùng.',
+  statement: 'Mình yêu cái đẹp, nhưng cái đẹp phải có lý do.',
   paragraphs: [
     'Mình theo đuổi sự giao thoa giữa thiết kế trải nghiệm và phát triển giao diện: hiểu vấn đề, tổ chức thông tin, thử nghiệm ý tưởng và hiện thực hóa bằng code.',
     'Mình yêu thích nghệ thuật nhưng cũng cần mọi thứ hợp lý, nên luôn muốn làm ra sản phẩm vừa đẹp vừa dễ dùng và mang dấu ấn riêng. Một năm theo đuổi nhiếp ảnh giúp mình nhìn ánh sáng, bố cục và màu sắc kỹ hơn; mình mang cách nhìn đó vào từng màn hình mình thiết kế và code.'

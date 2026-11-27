@@ -12,7 +12,7 @@ export default function About() {
     <>
       <section className="section about" aria-labelledby="about-title">
         <header className="section-intro section-intro--lg">
-          <p className="eyebrow">ABOUT / THE PERSON BEHIND THE PIXELS</p>
+          <p className="eyebrow">VỀ TÔI / NGƯỜI ĐỨNG SAU NHỮNG KHUNG HÌNH</p>
           <h1 id="about-title" className="heading">Xin chào, mình là {site.name}.</h1>
           <p className="body">{about.subtitle}</p>
         </header>
@@ -49,7 +49,7 @@ export default function About() {
       </section>
 
       <section className="section timeline-section" aria-labelledby="timeline-title">
-        <SectionIntro eyebrow="01 / EXPERIENCE & EDUCATION" heading="Kinh nghiệm & học vấn." />
+        <SectionIntro eyebrow="01 / KINH NGHIỆM & HỌC VẤN" heading="Kinh nghiệm & học vấn." />
         <ol className="timeline">
           {about.timeline.map((t) => (
             <li className="timeline__item" key={t.title}>
@@ -74,7 +74,7 @@ export default function About() {
 
       <section className="section section--paper capabilities">
         <SectionIntro
-          eyebrow="02 / CAPABILITIES"
+          eyebrow="02 / NĂNG LỰC"
           heading="Thiết kế, code và những gì ở giữa."
           description="Các kỹ năng và công cụ theo từng lĩnh vực"
         />
@@ -99,7 +99,7 @@ export default function About() {
       </section>
 
       <section className="section process">
-        <SectionIntro eyebrow="03 / HOW I WORK" heading="Từ câu hỏi đúng đến sản phẩm tốt." />
+        <SectionIntro eyebrow="03 / CÁCH MÌNH LÀM VIỆC" heading="Từ câu hỏi đúng đến sản phẩm tốt." />
         <ol className="process__stages">
           {about.process.map((s) => (
             <li className="stage-step" key={s.n}>

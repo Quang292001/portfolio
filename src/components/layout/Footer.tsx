@@ -8,12 +8,12 @@ export default function Footer({ heading }: { heading?: ReactNode }) {
     <footer className="footer" id="contact">
       <div className="footer__contact">
         <div className="footer__invite">
-          <p className="eyebrow eyebrow--ice">LET’S BUILD SOMETHING MEANINGFUL</p>
+          <p className="eyebrow eyebrow--ice">LIÊN HỆ / CÙNG LÀM MỘT THỨ ĐÁNG NHỚ</p>
           <h2 className="heading heading--light">
             {heading ?? (
               <>
-                <span className="block">Một ý tưởng tốt.</span>
-                <span className="block">Một trải nghiệm đáng nhớ.</span>
+                <span className="block">Có một ý tưởng cần lấy nét?</span>
+                <span className="block">Mình muốn nghe.</span>
               </>
             )}
           </h2>
@@ -54,7 +54,7 @@ export default function Footer({ heading }: { heading?: ReactNode }) {
 
       <div className="footer__rule" />
       <div className="footer__colophon">
-        <span>© 2026 {site.name} · Design & code with care.</span>
+        <span>© 2026 {site.name} · Thiết kế và code tại Sài Gòn.</span>
         
       </div>
     </footer>

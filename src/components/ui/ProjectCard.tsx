@@ -5,7 +5,7 @@ import type { Project } from '../../data/projects';
 import BrowserMockup from './BrowserMockup';
 import { TagList } from './Tag';
 
-export default function ProjectCard({ project, featured = false }: { project: Project; featured?: boolean }) {
+export default function ProjectCard({ project, featured = false, index }: { project: Project; featured?: boolean; index?: number }) {
   const internal = project.href.startsWith('/');
   const clickable = project.href !== '#'; // '#' = chưa có trang đích → không hiệu ứng, không bấm
   const external = clickable && !internal;
@@ -56,6 +56,7 @@ export default function ProjectCard({ project, featured = false }: { project: Pr
 
       {/* Khối chữ nằm trong khung xám */}
       <div className="project__info">
+        {index !== undefined && <p className="project__index">KHUNG {String(index).padStart(2, '0')}</p>}
         {internal ? (
           <Link className="project__title-row" to={project.href}>{title}</Link>
         ) : (

@@ -7,6 +7,7 @@ import Home from './pages/Home';
 import ScrollToTop from './components/layout/ScrollToTop';
 import HabitCaseStudy from './pages/HabitCaseStudy';
 import FireflyCaseStudy from './pages/FireflyCaseStudy';
+import QArchivesCaseStudy from './pages/QArchivesCaseStudy';
 export default function App() {
   const { pathname } = useLocation();
   return (
@@ -20,6 +21,7 @@ export default function App() {
           <Route path="/projects/stride" element={<CaseStudy />} />
           <Route path="/projects/habit-tracker" element={<HabitCaseStudy />} />
           <Route path="/projects/firefly-maze" element={<FireflyCaseStudy />} />
+          <Route path="/projects/q-archives" element={<QArchivesCaseStudy />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>
