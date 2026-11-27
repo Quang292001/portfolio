@@ -6,6 +6,7 @@ import CaseStudy from './pages/CaseStudy';
 import Home from './pages/Home';
 import ScrollToTop from './components/layout/ScrollToTop';
 import HabitCaseStudy from './pages/HabitCaseStudy';
+import FireflyCaseStudy from './pages/FireflyCaseStudy';
 export default function App() {
   const { pathname } = useLocation();
   return (
@@ -17,7 +18,8 @@ export default function App() {
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
           <Route path="/projects/stride" element={<CaseStudy />} />
-             <Route path="/projects/habit-tracker" element={<HabitCaseStudy />} />
+          <Route path="/projects/habit-tracker" element={<HabitCaseStudy />} />
+          <Route path="/projects/firefly-maze" element={<FireflyCaseStudy />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </main>

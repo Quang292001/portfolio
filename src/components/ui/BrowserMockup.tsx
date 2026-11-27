@@ -2,6 +2,7 @@ import type { Project } from '../../data/projects';
 import {Link} from "react-router-dom";
 
 function Cta({ href, children }: { href?: string; children: string }) {
+  if (!children) return null; // mockup chỉ có ảnh (Nexus, Firefly) → không render link rỗng
   if (!href) return <span className="mockup__cta">{children}</span>;
 
   // Link ngoài (https://...) → thẻ <a>, mở tab mới để người xem không rời khỏi portfolio

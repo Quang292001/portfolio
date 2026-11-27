@@ -474,3 +474,9 @@ a.mockup__cta { position: relative; z-index: 2; }
   .timeline__item { grid-template-columns: 1fr; gap: 8px; }
 }
 .about__photo { object-position: center 30%; }
+
+/* ---------- Lưới dự án: số thẻ lẻ thì thẻ cuối trải hết chiều ngang ---------- */
+@media (min-width: 768px) {
+  .work__grid > .project-card:last-child:nth-child(odd) { grid-column: 1 / -1; }
+  .work__grid > .project-card:last-child:nth-child(odd) .project-card__preview { height: 380px; }
+}
